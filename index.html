@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="bootstrap.css" />
+</head>
+<body ng-app="uiRouteDemo" ng-controller="UiRouteController">
+	<a ui-sref="list">List</a>
+    <div ui-view="list" ng-show="isListState()"></div>
+    <div ui-view="detail" ng-show="isDetailState()"></div>
+    <div ui-view="compare" ng-show="isCompareState()"></div>
+	<script type="text/javascript" src="vendor.js"></script>
+	<script type="text/javascript" src="scripts.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/ng-template" id="/list_health.html">
+		Health
+		<a ui-sref="detail">Detail</a>
+	</script>
+	<script type="text/ng-template" id="/list.html">
+		<scope-age></scope-age>
+		List View
+		<div ui-view></div>
+		<a ui-sref="list.health">Health</a>
+	</script>
+	<script type="text/ng-template" id="/detail.html">
+		<scope-age></scope-age>
+		In detail
+	</script>
+	<script type="text/ng-template" id="/compare.html">
+		<scope-age></scope-age>
+		In Compare
+	</script>
+</body>
+</html>
